@@ -778,3 +778,48 @@ header {
     box-shadow: none;
     border-color: #ffa62b;
 }
+
+
+/* Users authentication */
+
+.auth-user {
+    width: 200px;
+    position: fixed;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 0;
+    background-color: #ffa62b;
+    color: #2a2e33;
+    padding: 20px 10px;
+    text-align: center;
+    transform: translateX(-100%);
+    transition: all 0.5s ease-in-out;
+    z-index: 1000;
+}
+
+.auth-user .auth-user-icon {
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    top: 0;
+    right: -40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #ffa62b;
+    color: #2a2e33;
+    cursor: pointer;
+    border-left: 1px solid #2a2e33;
+}
+
+.auth-user .auth-user-guest a {
+    color: #2a2e33;
+}
+
+.auth-user .auth-user-logged a {
+    color: #2a2e33;
+}
+
+.auth-user.display {
+    transform: translateX(0);
+}

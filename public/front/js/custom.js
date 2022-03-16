@@ -22,3 +22,10 @@ overlayMenu.addEventListener('click', function () {
     navbar.classList.remove('show');
     overlayMenu.classList.remove('display');
 });
+
+const authUserIcon = document.querySelector('.auth-user-icon');
+const authUser = document.querySelector('.auth-user');
+
+authUserIcon.addEventListener('click', function () {
+    authUser.classList.toggle('display');
+});

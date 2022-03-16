@@ -36,3 +36,25 @@
         </div>
     </nav>
 </header>
+
+<div class="auth-user">
+    @guest
+        <div class="auth-user-guest">
+            <a href="{{ route('register') }}">ثبت نام</a>
+            <span>/</span>
+            <a href="">ورود</a>
+        </div>
+    @else
+        <div class="auth-user-logged">
+            <div class="auth-user-logged-profile">
+                <a href="">پروفایل</a>
+            </div>
+            <div class="auth-user-logged-exit">
+                <a href="">خروج</a>
+            </div>
+        </div>
+    @endguest
+    <div class="auth-user-icon">
+        <i class="fas fa-cog fa-spin"></i>
+    </div>
+</div>
