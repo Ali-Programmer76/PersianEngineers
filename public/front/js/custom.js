@@ -3,6 +3,7 @@ $('.counter-number').counterUp({
     time: 3000
 });
 
+
 const hamburgerMenu = document.querySelector('.hamburger-menu');
 const navbar = document.querySelector('.navbar-nav');
 const closeMenu = document.querySelector('.close-menu');
@@ -23,9 +24,15 @@ overlayMenu.addEventListener('click', function () {
     overlayMenu.classList.remove('display');
 });
 
+
 const authUserIcon = document.querySelector('.auth-user-icon');
 const authUser = document.querySelector('.auth-user');
 
 authUserIcon.addEventListener('click', function () {
     authUser.classList.toggle('display');
 });
+
+
+function logoutUser() {
+    document.querySelector('#logout-form').submit();
+}

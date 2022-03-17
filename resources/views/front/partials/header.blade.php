@@ -46,13 +46,16 @@
         </div>
     @else
         <div class="auth-user-logged">
-            <div class="auth-user-logged-profile">
-                <a href="">پروفایل</a>
+            <div class="auth-user-logged-profile mb-2">
+                <a href="{{ route('dashboard') }}">پروفایل</a>
             </div>
             <div class="auth-user-logged-exit">
-                <a href="">خروج</a>
+                <span onclick="logoutUser()">خروج</span>
             </div>
         </div>
+        <form action="{{ route('logout') }}" method="post" id="logout-form">
+            @csrf
+        </form>
     @endguest
     <div class="auth-user-icon">
         <i class="fas fa-cog fa-spin"></i>
