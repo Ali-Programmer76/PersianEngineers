@@ -42,7 +42,7 @@
         <div class="auth-user-guest">
             <a href="{{ route('register') }}">ثبت نام</a>
             <span>/</span>
-            <a href="">ورود</a>
+            <a href="{{ route('login') }}">ورود</a>
         </div>
     @else
         <div class="auth-user-logged">
