@@ -1,0 +1,11 @@
+@media screen and (max-width:1200px) {
+    .main .information {
+        flex-wrap: wrap;
+    }
+
+    .main .information .col-div-3 {
+        flex: 0 0 calc(100%);
+        max-width: calc(100%);
+        margin-bottom: 15px;
+    }
+}

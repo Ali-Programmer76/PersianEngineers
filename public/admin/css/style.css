@@ -1,0 +1,208 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap');
+
+@font-face {
+    font-family: 'vazir';
+    src: url('../fonts/Vazir.eot'),
+        url('../fonts/Vazir.woff') format('woff'),
+        url('../fonts/Vazir.ttf') format('truetype');
+}
+
+body {
+    font-family: 'vazir';
+    direction: rtl;
+    text-align: right;
+    background-color: #1b203d;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    box-sizing: border-box;
+}
+
+/* Sidebar */
+
+#mySlideNav.slide-nav {
+    width: 300px;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    right: 0;
+    background-color: #272c4a;
+    padding-top: 20px;
+    transition: all 0.5s ease-in-out;
+}
+
+.slide-nav .logo {
+    color: #fff;
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
+    font-size: 20px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    margin-bottom: 10px;
+}
+
+.slide-nav .logo span {
+    color: #f7403b;
+    font-size: 30px;
+}
+
+.slide-nav .sidebar-link {
+    display: block;
+    height: 40px;
+    color: #818188;
+    text-decoration: none;
+    padding: 10px 20px;
+    font-size: 15px;
+    transition: all 0.2s ease-in-out;
+}
+
+.slide-nav .sidebar-link .sidebar-icon svg {
+    margin-left: 10px;
+    transition: all 0.5s ease-in-out;
+}
+
+.slide-nav .sidebar-link:hover {
+    background-color: #1b203d;
+    color: azure;
+}
+
+
+/* Main - Header */
+
+#adminMain.main {
+    margin-right: 300px;
+    padding: 20px;
+    transition: all 0.5s ease-in-out;
+}
+
+.main .header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+}
+
+.main .header .first-nav {
+    color: #fff;
+    margin-left: 5px;
+    cursor: pointer;
+    font-size: 25px;
+}
+
+.main .header .second-nav {
+    color: #fff;
+    font-size: 20px;
+}
+
+.main .header .admin-profile p {
+    color: azure;
+    font-size: 13px;
+}
+
+.main .header .admin-profile p span {
+    display: block;
+    color: #8e8e8e;
+    font-size: 12px;
+}
+
+
+/* Main - Information */
+
+.main .information {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.main .information .col-div-3 {
+    /* width: 24%; */
+    /* width: calc(25% - 20px); */
+    flex: 0 0 calc(25% - 20px);
+    max-width: calc(25% - 20px);
+    background-color: #272c4a;
+}
+
+.main .information .box-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 50px;
+}
+
+.main .information .box-item .box-item-icon svg {
+    color: #818188;
+    font-size: 40px;
+    margin-left: 5px;
+}
+
+.main .information .box-item .box-item-text {
+    color: #fff;
+    font-size: 30px;
+    text-align: center;
+}
+
+.main .information .box-item .box-item-text h4 {
+    font-family: 'Poppins', sans-serif;
+}
+
+.main .information .box-item .box-item-text h6 {
+    color: #818181;
+    font-size: 15px;
+    font-weight: 300;
+}
+
+
+/* Main - Content */
+.main .content {
+    background-color: #272c4a;
+    margin-top: 30px;
+    padding: 20px;
+}
+
+.main .content .content-item h3 {
+    color: #f7403b;
+    margin-bottom: 30px;
+}
+
+.main .content .content-item table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.main .content .content-item table tr th,
+.main .content .content-item table tr td {
+    padding: 15px;
+    border-bottom: 1px solid rgba(130, 130, 130, 0.3);
+    color: azure;
+}
+
+
+/* Display */
+
+#mySlideNav.slide-nav.display {
+    width: 60px;
+}
+
+#adminMain.main.display {
+    margin-right: 60px;
+}
+
+.sidebar-link.display {
+    visibility: hidden;
+}
+
+.sidebar-icon.display {
+    visibility: visible;
+}
+
+.sidebar-icon.display svg {
+    font-size: larger;
+}
+
+.logo.display {
+    visibility: hidden;
+}
