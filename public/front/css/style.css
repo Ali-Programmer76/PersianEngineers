@@ -779,6 +779,14 @@ header {
     border-color: #ffa62b;
 }
 
+.auth p {
+    font-size: 13px;
+}
+
+.auth span.remember {
+    font-size: 13px;
+}
+
 
 /* Users authentication */
 
