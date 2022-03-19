@@ -5,7 +5,8 @@
     </div>
     <div class="col-div-6">
         <div class="admin-profile">
-            <p>سلام سیدعلی حسینی خوش آمدید، <span>شما مدیر سایت هستید.</span></p>
+            <p>سلام {{ auth()->user()->name }} خوش آمدید، <span>شما {{ auth()->user()->userRole() }} هستید.</span>
+            </p>
         </div>
     </div>
 </div>
