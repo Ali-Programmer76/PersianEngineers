@@ -206,3 +206,34 @@ body {
 .logo.display {
     visibility: hidden;
 }
+
+
+/* Main - Pagination */
+
+.pagination .page-item.active .page-link {
+    background-color: #f7403b;
+    border-color: #f7403b;
+}
+
+.pagination .page-item:first-child .page-link {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    border-top-right-radius: 0.25rem;
+    border-bottom-right-radius: 0.25rem;
+}
+
+.pagination .page-item:last-child .page-link {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    border-top-left-radius: 0.25rem;
+    border-bottom-left-radius: 0.25rem;
+}
+
+.pagination .page-link {
+    color: #1b203d;
+    border: 1px solid #1b203d;
+}
+
+.pagination .page-link:hover {
+    background-color: gainsboro;
+}

@@ -3,7 +3,7 @@
 @section('content')
     <div class="content-item">
         <h3>لیست کاربران سایت</h3>
-        <div class="table-responsive">
+        <div class="table-responsive my-2">
             <table class="table table-striped text-center">
                 <thead>
                     <tr>
@@ -32,6 +32,9 @@
                     @endforeach
                 </tbody>
             </table>
+        </div>
+        <div class="pagination">
+            {{ $users->links() }}
         </div>
     </div>
 @endsection
