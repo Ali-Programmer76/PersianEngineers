@@ -23,9 +23,10 @@
                             <td>{{ $user->name }}</td>
                             <td>{{ $user->mobile }}</td>
                             <td>{{ $user->userRole() }}</td>
-                            <td>{{ $user->created_at }}</td>
+                            <td>{{ $user->persianDate() }}</td>
                             <td>
-                                <a href="" class="text-success"><i class="fas fa-edit"></i></a>
+                                <a href="{{ route('users.edit', $user->id) }}" class="text-white"><i
+                                        class="fas fa-edit"></i></a>
                             </td>
                             <td>-</td>
                         </tr>

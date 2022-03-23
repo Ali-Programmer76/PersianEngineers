@@ -22,6 +22,7 @@ class User extends Authenticatable
         'mobile',
         'email',
         'password',
+        'role'
     ];
 
     /**
@@ -55,5 +56,10 @@ class User extends Authenticatable
         if ($this->role === "admin") {
             return "مدیر سایت";
         }
+    }
+
+    public function persianDate()
+    {
+        return verta($this->created_at)->format('Y/m/d');
     }
 }

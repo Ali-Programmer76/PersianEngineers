@@ -17,7 +17,6 @@ body {
 * {
     margin: 0;
     padding: 0;
-    overflow: hidden;
     box-sizing: border-box;
 }
 
@@ -236,4 +235,47 @@ body {
 
 .pagination .page-link:hover {
     background-color: gainsboro;
+}
+
+
+/* Main - Edit */
+
+.form-group {
+    width: 100%;
+    margin: 15px 0;
+}
+
+.form-group label {
+    display: block;
+    width: 100%;
+    color: #f7403b;
+}
+
+.form-group input {
+    width: 50%;
+    margin-top: 10px;
+    padding: 5px;
+    border: none;
+    outline: none;
+    font-size: 13px;
+}
+
+.form-group select {
+    width: 50%;
+    margin-top: 10px;
+    padding: 5px;
+    border: none;
+    outline: none;
+    font-size: 13px;
+}
+
+.form-group .btn-edit-form {
+    width: 150px;
+    padding: 5px;
+    background-color: #f7403b;
+    color: #fff;
+}
+
+.form-group p {
+    font-size: 13px;
 }

@@ -51,7 +51,7 @@
         <span class="sidebar-icon"><i class="fas fa-clipboard-list"></i></span>
         فوتر سایت
     </a>
-    <a href="" class="sidebar-link">
+    <a href="{{ route('users.index') }}" class="sidebar-link">
         <span class="sidebar-icon"><i class="fas fa-users"></i></span>
         کاربران سایت
     </a>
