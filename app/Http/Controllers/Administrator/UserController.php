@@ -51,6 +51,7 @@ class UserController extends Controller
             'email' => $request->email,
             'role' => $request->role
         ]);
+        $request->session()->flash('update');
         return redirect()->route('users.index');
     }
 

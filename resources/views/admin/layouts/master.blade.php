@@ -25,7 +25,10 @@
 
     <script src="{{ asset('/admin/js/jquery.js') }}"></script>
     <script src="{{ asset('/admin/js/fontawesome.js') }}"></script>
+    <script src="{{ asset('/admin/js/sweetAlert.js') }}"></script>
     <script src="{{ asset('/admin/js/custom.js') }}"></script>
+
+    @yield('javaScript')
 </body>
 
 </html>

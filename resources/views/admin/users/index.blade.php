@@ -39,3 +39,16 @@
         </div>
     </div>
 @endsection
+
+@section('javaScript')
+    @if (Session::has('update'))
+        <script>
+            Swal.fire({
+                icon: 'success',
+                title: 'تبریک!',
+                text: 'اطلاعات کاربر با موفقیت ویرایش شد.',
+                confirmButtonText: 'تأیید',
+            });
+        </script>
+    @endif
+@endsection
