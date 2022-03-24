@@ -51,12 +51,16 @@ class UserController extends Controller
             'email' => $request->email,
             'role' => $request->role
         ]);
-        $request->session()->flash('update');
+        // $request->session()->flash('update');
+        session()->flash('update');
         return redirect()->route('users.index');
     }
 
     public function destroy($id)
     {
-        //
+        $user = User::findOrFail($id);
+        $user->delete();
+        session()->flash('delete');
+        return redirect()->route('users.index');
     }
 }

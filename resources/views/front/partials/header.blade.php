@@ -45,10 +45,11 @@
             <a href="{{ route('login') }}">ورود</a>
         </div>
     @else
-        <div class="auth-user-logged">
-            <div class="auth-user-logged-profile mb-2">
+        <div class="auth-user-logged d-flex justify-content-center align-items-center">
+            <div class="auth-user-logged-profile">
                 <a href="{{ route('dashboard') }}">پروفایل</a>
             </div>
+            <span class="px-1">/</span>
             <div class="auth-user-logged-exit">
                 <span onclick="logoutUser()">خروج</span>
             </div>

@@ -25,10 +25,24 @@
                             <td>{{ $user->userRole() }}</td>
                             <td>{{ $user->persianDate() }}</td>
                             <td>
-                                <a href="{{ route('users.edit', $user->id) }}" class="text-white"><i
+                                <a href="{{ route('users.edit', $user->id) }}" class="text-success"><i
                                         class="fas fa-edit"></i></a>
                             </td>
-                            <td>-</td>
+                            <td>
+                                @if (auth()->user()->id !== $user->id && $user->role !== 'admin')
+                                    <a href="{{ route('users.destroy', $user->id) }}" class="text-danger"
+                                        onclick="destroyUser(event,{{ $user->id }})">
+                                        <i class="fas fa-trash-alt"></i>
+                                    </a>
+                                @else
+                                    <span>-</span>
+                                @endif
+                                <form action="{{ route('users.destroy', $user->id) }}" method="post"
+                                    id="destroy-user-{{ $user->id }}">
+                                    @csrf
+                                    @method('DELETE')
+                                </form>
+                            </td>
                         </tr>
                     @endforeach
                 </tbody>
@@ -49,6 +63,15 @@
                 text: 'اطلاعات کاربر با موفقیت ویرایش شد.',
                 confirmButtonText: 'تأیید',
             });
+        </script>
+    @elseif (Session::has('delete'))
+        <script>
+            Swal.fire({
+                icon: 'success',
+                title: 'حذف',
+                text: 'اطلاعات کاربر با موفقیت حذف شد.',
+                confirmButtonText: 'تأیید'
+            })
         </script>
     @endif
 @endsection
