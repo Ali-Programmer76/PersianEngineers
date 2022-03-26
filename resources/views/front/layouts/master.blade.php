@@ -9,6 +9,9 @@
     <link rel="stylesheet" href={{ asset('/front/css/bootstrap.css') }}>
     <link rel="stylesheet" href={{ asset('/front/css/style.css') }}>
     <link rel="stylesheet" href={{ asset('/front/css/responsive.css') }}>
+
+    @include('front.partials.seo')
+
     <title>شرکت خدمات فنی و مهندسی مهندسان ایرانی</title>
 </head>
 

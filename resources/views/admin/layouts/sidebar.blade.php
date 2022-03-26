@@ -3,15 +3,19 @@
         <span>P</span>ersianEngineers
     </p>
 
-    <a href="" class="sidebar-link">
+    <a href="{{ route('home') }}" class="sidebar-link" target="_blank">
         <span class="sidebar-icon"><i class="fas fa-eye"></i></span>
         نمایش وبسایت
     </a>
-    <a href="" class="sidebar-link">
+    <a href="{{ route('dashboard') }}" class="sidebar-link">
         <span class="sidebar-icon"><i class="fas fa-home"></i></span>
         داشبورد
     </a>
     @if (auth()->user()->role === 'admin')
+        <a href="" class="sidebar-link">
+            <span class="sidebar-icon"><i class="fas fa-magic"></i></span>
+            سئو سایت
+        </a>
         <a href="" class="sidebar-link">
             <span class="sidebar-icon"><i class="fas fa-ellipsis-h"></i></span>
             منوی بالایی
