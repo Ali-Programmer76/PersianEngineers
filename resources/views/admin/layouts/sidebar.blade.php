@@ -12,7 +12,7 @@
         داشبورد
     </a>
     @if (auth()->user()->role === 'admin')
-        <a href="" class="sidebar-link">
+        <a href="{{ route('seo.index') }}" class="sidebar-link">
             <span class="sidebar-icon"><i class="fas fa-magic"></i></span>
             سئو سایت
         </a>

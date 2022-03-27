@@ -39,7 +39,7 @@
                 @enderror
             </div>
             <div class="form-group">
-                <input type="submit" class="btn-edit-form" value="ذخیره">
+                <input type="submit" class="btn-form" value="ذخیره">
             </div>
         </form>
     </div>
