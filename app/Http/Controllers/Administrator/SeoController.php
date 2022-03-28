@@ -41,12 +41,23 @@ class SeoController extends Controller
 
     public function edit($id)
     {
-        //
+        $seo = Seo::findOrFail($id);
+        return view('admin.seo.edit', compact('seo'));
     }
 
     public function update(Request $request, $id)
     {
-        //
+        Seo::findOrFail($id)->update([
+            'title' => $request->title,
+            'description' => $request->description,
+            'keywords' => $request->keywords,
+            'site_name' => $request->site_name,
+            'site_url' => $request->site_url,
+            'twitter_name' => $request->twitter_name,
+            'twitter_description' => $request->twitter_description
+        ]);
+        session()->flash('update');
+        return redirect()->route('seo.index');
     }
 
     public function destroy($id)

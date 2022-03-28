@@ -8,7 +8,7 @@
                 <a href="{{ route('seo.create') }}">تنظیم سئو</a>
             </div>
         </div>
-        <div class="table-responsive my-3">
+        <div class="table-responsive my-2">
             <table class="table table-striped text-center">
                 <thead>
                     <tr>
@@ -32,7 +32,8 @@
                             <td>{{ $seo->site_url }}</td>
                             <td>{{ $seo->twitter_name }}</td>
                             <td>
-                                <a href="" class="text-success"><i class="fas fa-edit"></i></a>
+                                <a href="{{ route('seo.edit', $seo->id) }}" class="text-success"><i
+                                        class="fas fa-edit"></i></a>
                             </td>
                             <td>
                                 <a href="{{ route('seo.destroy', $seo->id) }}"
@@ -71,7 +72,7 @@
             Swal.fire({
                 icon: 'success',
                 title: 'تبریک!',
-                text: 'اطلاعات کاربر با موفقیت ویرایش شد.',
+                text: 'تنظیمات سئو با موفقیت ویرایش شد.',
                 confirmButtonText: 'تأیید',
             });
         </script>
