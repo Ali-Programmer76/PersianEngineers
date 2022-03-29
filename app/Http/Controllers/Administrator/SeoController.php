@@ -3,6 +3,8 @@
 namespace App\Http\Controllers\Administrator;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\Administrator\Seo\CreateSeoRequest;
+use App\Http\Requests\Administrator\Seo\UpdateSeoRequest;
 use App\Models\Seo;
 use Illuminate\Http\Request;
 
@@ -19,7 +21,7 @@ class SeoController extends Controller
         return view('admin.seo.create');
     }
 
-    public function store(Request $request)
+    public function store(CreateSeoRequest $request)
     {
         Seo::create([
             'title' => $request->title,
@@ -45,7 +47,7 @@ class SeoController extends Controller
         return view('admin.seo.edit', compact('seo'));
     }
 
-    public function update(Request $request, $id)
+    public function update(UpdateSeoRequest $request, $id)
     {
         Seo::findOrFail($id)->update([
             'title' => $request->title,

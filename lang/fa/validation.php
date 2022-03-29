@@ -167,5 +167,10 @@ return [
         'username'              => 'نام کاربری',
         'year'                  => 'سال',
         'role'                  => 'سطح دسترسی',
+        'keywords'              => 'کلمات کلیدی',
+        'site_name'             => 'نام وبسایت',
+        'site_url'              => 'آدرس وبسایت',
+        'twitter_name'          => 'نام توییتر شرکت',
+        'twitter_description'   => 'درباره شرکت در توییتر',
     ],
 ];
