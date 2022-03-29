@@ -19,7 +19,7 @@ Route::get('/dashboard', function () {
     return view('admin.dashboard');
 })->middleware(['auth'])->name('dashboard');
 
-Route::resource('/dashboard/users', App\Http\Controllers\Administrator\UserController::class)->parameters(['users' => 'id'])->middleware(['auth']);
-Route::resource('/dashboard/seo', App\Http\Controllers\Administrator\SeoController::class)->parameters(['seo' => 'id'])->middleware(['auth']);
+Route::middleware(['auth', 'admin'])->resource('/dashboard/users', App\Http\Controllers\Administrator\UserController::class)->parameters(['users' => 'id']);
+Route::middleware(['auth', 'admin'])->resource('/dashboard/seo', App\Http\Controllers\Administrator\SeoController::class)->parameters(['seo' => 'id']);
 
 require __DIR__ . '/auth.php';

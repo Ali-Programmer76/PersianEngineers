@@ -7,12 +7,12 @@
         <span class="sidebar-icon"><i class="fas fa-eye"></i></span>
         نمایش وبسایت
     </a>
-    <a href="{{ route('dashboard') }}" class="sidebar-link">
+    <a href="{{ route('dashboard') }}" class="sidebar-link @if (request()->is('dashboard')) active @endif">
         <span class="sidebar-icon"><i class="fas fa-home"></i></span>
         داشبورد
     </a>
     @if (auth()->user()->role === 'admin')
-        <a href="{{ route('seo.index') }}" class="sidebar-link">
+        <a href="{{ route('seo.index') }}" class="sidebar-link  @if (request()->is('dashboard/seo')) active @endif">
             <span class="sidebar-icon"><i class="fas fa-magic"></i></span>
             سئو سایت
         </a>
@@ -56,7 +56,7 @@
             <span class="sidebar-icon"><i class="fas fa-clipboard-list"></i></span>
             فوتر سایت
         </a>
-        <a href="{{ route('users.index') }}" class="sidebar-link">
+        <a href="{{ route('users.index') }}" class="sidebar-link  @if (request()->is('dashboard/users')) active @endif">
             <span class="sidebar-icon"><i class="fas fa-users"></i></span>
             کاربران سایت
         </a>
