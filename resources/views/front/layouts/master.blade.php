@@ -12,7 +12,6 @@
 
     @include('front.partials.seo')
 
-    <title>شرکت خدمات فنی و مهندسی مهندسان ایرانی</title>
 </head>
 
 <body>
