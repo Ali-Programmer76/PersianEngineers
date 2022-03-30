@@ -155,7 +155,7 @@ return [
         'national_code'         => 'کد ملی',
         'password'              => 'رمز عبور',
         'password_confirmation' => 'تکرار رمز عبور',
-        'phone'                 => 'شماره ثابت',
+        'phone'                 => 'شماره تلفن',
         'province'              => 'استان',
         'second'                => 'ثانیه',
         'sex'                   => 'جنسیت',
@@ -172,5 +172,8 @@ return [
         'site_url'              => 'آدرس وبسایت',
         'twitter_name'          => 'نام توییتر شرکت',
         'twitter_description'   => 'درباره شرکت در توییتر',
+        'instagram'             => 'آدرس اینستاگرام شرکت',
+        'twitter'             => 'آدرس توییتر شرکت',
+        'telegram'             => 'آیدی کانال تلگرام شرکت',
     ],
 ];

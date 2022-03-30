@@ -2,7 +2,7 @@
 
 @section('content')
     <div class="content-item">
-        <div class="seo-header my-2">
+        <div class="content-header my-2">
             <h3>ویرایش بخش سئو</h3>
         </div>
         <div class="my-2">

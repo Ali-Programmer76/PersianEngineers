@@ -16,7 +16,7 @@
             <span class="sidebar-icon"><i class="fas fa-magic"></i></span>
             سئو سایت
         </a>
-        <a href="" class="sidebar-link">
+        <a href="{{ route('topHeader.index') }}" class="sidebar-link @if (request()->is('dashboard/topHeader')) active @endif">
             <span class="sidebar-icon"><i class="fas fa-ellipsis-h"></i></span>
             منوی بالایی
         </a>

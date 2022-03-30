@@ -2,7 +2,7 @@
 
 @section('content')
     <div class="content-item">
-        <div class="seo-header my-2">
+        <div class="content-header my-2">
             <h3>تنظیمات بخش سئو</h3>
             <div>
                 <a href="{{ route('seo.create') }}">تنظیم سئو</a>
