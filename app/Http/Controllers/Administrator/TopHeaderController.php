@@ -28,7 +28,7 @@ class TopHeaderController extends Controller
             'phone' => $request->phone,
             'instagram' => $request->instagram,
             'twitter' => $request->twitter,
-            'telegram' => $request->email
+            'telegram' => $request->telegram
         ]);
         session()->flash('create');
         return redirect()->route('topHeader.index');
@@ -53,7 +53,7 @@ class TopHeaderController extends Controller
             'phone' => $request->phone,
             'instagram' => $request->instagram,
             'twitter' => $request->twitter,
-            'telegram' => $request->email
+            'telegram' => $request->telegram
         ]);
         session()->flash('update');
         return redirect()->route('topHeader.index');
@@ -61,6 +61,9 @@ class TopHeaderController extends Controller
 
     public function destroy($id)
     {
-        //
+        $topHeader = TopHeader::findOrFail($id);
+        $topHeader->delete();
+        session()->flash('delete');
+        return redirect()->route('topHeader.index');
     }
 }

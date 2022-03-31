@@ -54,3 +54,22 @@ function destroySeo(event, id) {
         }
     })
 }
+
+
+function destroyItem(event, id) {
+    event.preventDefault();
+    Swal.fire({
+        title: 'حذف',
+        text: 'آیا از حذف کردن مطمئن هستید؟',
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonText: 'بله',
+        cancelButtonText: 'خیر',
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
+    }).then((result) => {
+        if (result.isConfirmed) {
+            document.querySelector('#destroy-item-' + id).submit();
+        }
+    })
+}

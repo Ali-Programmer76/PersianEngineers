@@ -32,7 +32,14 @@
                                         class="fas fa-edit"></i></a>
                             </td>
                             <td>
-                                <a href="" class="text-danger"><i class="fas fa-trash-alt"></i></a>
+                                <a href="{{ route('topHeader.destroy', $topHeader->id) }}"
+                                    onclick="destroyItem(event,{{ $topHeader->id }})" class="text-danger"><i
+                                        class="fas fa-trash-alt"></i></a>
+                                <form action="{{ route('topHeader.destroy', $topHeader->id) }}" method="post"
+                                    id="destroy-item-{{ $topHeader->id }}">
+                                    @csrf
+                                    @method('DELETE')
+                                </form>
                             </td>
                         </tr>
                     @endforeach
