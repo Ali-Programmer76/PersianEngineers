@@ -6,13 +6,13 @@
                     <div class="col-lg-6">
                         <div class="email-address h-100 d-flex align-items-center">
                             آدرس ایمیل:
-                            <span>ali762124@gmail.com</span>
+                            <span>{{ $topHeader->email }}</span>
                         </div>
                     </div>
                     <div class="col-lg-6">
                         <div class="call h-100 d-flex align-items-center mt-2 mt-md-0">
                             شماره تلفن:
-                            <span>09905816811</span>
+                            <span>{{ $topHeader->phone }}</span>
                         </div>
                     </div>
                 </div>
@@ -23,13 +23,16 @@
                         <div class="col-lg-12">
                             <ul class="d-flex justify-content-end">
                                 <li>
-                                    <a href=""><i class="fab fa-instagram"></i></a>
+                                    <a href="{{ $topHeader->instagram }}" target="_blank"><i
+                                            class="fab fa-instagram"></i></a>
                                 </li>
                                 <li>
-                                    <a href=""><i class="fab fa-twitter-square"></i></a>
+                                    <a href="{{ $topHeader->twitter }}" target="_blank"><i
+                                            class="fab fa-twitter-square"></i></a>
                                 </li>
                                 <li>
-                                    <a href=""><i class="fab fa-telegram"></i></a>
+                                    <a href="{{ $topHeader->telegram }}" target="_blank"><i
+                                            class="fab fa-telegram"></i></a>
                                 </li>
                             </ul>
                         </div>
