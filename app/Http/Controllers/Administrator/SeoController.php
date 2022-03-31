@@ -12,7 +12,7 @@ class SeoController extends Controller
 {
     public function index()
     {
-        $seos = Seo::all();
+        $seos = Seo::paginate(3);
         return view('admin.seo.index', compact('seos'));
     }
 

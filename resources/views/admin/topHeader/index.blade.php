@@ -13,17 +13,35 @@
                 <thead>
                     <tr>
                         <th>#</th>
+                        <th>آدرس ایمیل</th>
+                        <th>شماره تلفن</th>
+                        <th>آدرس اینستاگرام</th>
                         <th>ویرایش</th>
                         <th>حذف</th>
                     </tr>
                 </thead>
                 <tbody>
+                    @foreach ($topHeaders as $key => $topHeader)
+                        <tr>
+                            <td>{{ $key + 1 }}</td>
+                            <td>{{ $topHeader->email }}</td>
+                            <td>{{ $topHeader->phone }}</td>
+                            <td>{{ $topHeader->instagram }}</td>
+                            <td>
+                                <a href="{{ route('topHeader.edit', $topHeader->id) }}" class="text-success"><i
+                                        class="fas fa-edit"></i></a>
+                            </td>
+                            <td>
+                                <a href="" class="text-danger"><i class="fas fa-trash-alt"></i></a>
+                            </td>
+                        </tr>
+                    @endforeach
                 </tbody>
             </table>
         </div>
-        {{-- <div class="pagination">
-            {{ $users->links() }}
-        </div> --}}
+        <div class="pagination">
+            {{ $topHeaders->links() }}
+        </div>
     </div>
 @endsection
 

@@ -50,9 +50,9 @@
                 </tbody>
             </table>
         </div>
-        {{-- <div class="pagination">
-            {{ $users->links() }}
-        </div> --}}
+        <div class="pagination">
+            {{ $seos->links() }}
+        </div>
     </div>
 @endsection
 

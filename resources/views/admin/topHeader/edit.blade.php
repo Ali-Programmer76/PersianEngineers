@@ -3,10 +3,10 @@
 @section('content')
     <div class="content-item">
         <div class="content-header my-2">
-            <h3>ساخت بخش منوی بالایی</h3>
+            <h3>ویرایش بخش منوی بالایی</h3>
         </div>
         <div class="my-2">
-            {!! Form::open(['method' => 'POST', 'route' => 'topHeader.store']) !!}
+            {!! Form::model($topHeader, ['method' => 'PUT', 'route' => ['topHeader.update', $topHeader->id]]) !!}
             <div class="form-group">
                 {!! Form::label('email', 'آدرس ایمیل شرکت') !!}
                 {!! Form::text('email', null, ['placeholder' => 'آدرس ایمیل شرکت را وارد کنید...']) !!}
