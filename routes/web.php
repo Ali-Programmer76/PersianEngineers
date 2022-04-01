@@ -22,5 +22,6 @@ Route::get('/dashboard', function () {
 Route::middleware(['auth', 'admin'])->resource('/dashboard/users', App\Http\Controllers\Administrator\UserController::class)->parameters(['users' => 'id']);
 Route::middleware(['auth', 'admin'])->resource('/dashboard/seo', App\Http\Controllers\Administrator\SeoController::class)->parameters(['seo' => 'id']);
 Route::middleware(['auth', 'admin'])->resource('/dashboard/topHeader', App\Http\Controllers\Administrator\TopHeaderController::class)->parameters(['topHeader' => 'id']);
+Route::middleware(['auth', 'admin'])->resource('/dashboard/home', App\Http\Controllers\Administrator\HeroController::class)->parameters(['home' => 'id']);
 
 require __DIR__ . '/auth.php';

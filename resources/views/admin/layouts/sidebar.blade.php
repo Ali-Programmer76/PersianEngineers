@@ -20,7 +20,7 @@
             <span class="sidebar-icon"><i class="fas fa-ellipsis-h"></i></span>
             منوی بالایی
         </a>
-        <a href="" class="sidebar-link">
+        <a href="{{ route('home.index') }}" class="sidebar-link @if (request()->is('dashboard/home')) active @endif">
             <span class="sidebar-icon"><i class="fas fa-laptop-house"></i></span>
             خانه
         </a>

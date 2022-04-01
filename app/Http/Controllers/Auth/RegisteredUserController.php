@@ -10,6 +10,8 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Validation\Rules;
+use App\Models\Seo;
+use App\Models\TopHeader;
 
 class RegisteredUserController extends Controller
 {
@@ -20,7 +22,9 @@ class RegisteredUserController extends Controller
      */
     public function create()
     {
-        return view('auth.register');
+        $seo = Seo::orderBy('id', 'desc')->take(1)->first();
+        $topHeader = TopHeader::orderBy('id', 'desc')->take(1)->first();
+        return view('auth.register', compact('seo', 'topHeader'));
     }
 
     /**

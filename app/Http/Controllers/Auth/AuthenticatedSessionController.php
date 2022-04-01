@@ -7,6 +7,8 @@ use App\Http\Requests\Auth\LoginRequest;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use App\Models\Seo;
+use App\Models\TopHeader;
 
 class AuthenticatedSessionController extends Controller
 {
@@ -17,7 +19,9 @@ class AuthenticatedSessionController extends Controller
      */
     public function create()
     {
-        return view('auth.login');
+        $seo = Seo::orderBy('id', 'desc')->take(1)->first();
+        $topHeader = TopHeader::orderBy('id', 'desc')->take(1)->first();
+        return view('auth.login', compact('seo', 'topHeader'));
     }
 
     /**
