@@ -8,7 +8,7 @@
                     <h2 class="text-white fs-2 fw-bold lh-3 py-3 my-3">ما خوشحال خواهیم شد که از کار شما مراقبت کنیم
                         و بهترین کیفیت را ارائه دهیم.</h2>
                     <p class="mt-5">
-                        <a href="" class="btn btn-dark w-25 px-3 py-2">تماس با ما</a>
+                        <a href="" class="btn btn-dark w-25 px-3 py-2">درباره ما</a>
                         <a href="" class="btn btn-primary text-dark w-25 px-3 py-2">سؤالات متداول</a>
                     </p>
                 </div>
