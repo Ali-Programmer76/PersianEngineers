@@ -13,35 +13,37 @@
                 <thead>
                     <tr>
                         <th>#</th>
+                        <th>تصویر بخش خانه</th>
+                        <th>سال تأسیس شرکت</th>
+                        <th>درباره شرکت</th>
+                        <th>لینک درباره ما</th>
                         <th>ویرایش</th>
                         <th>حذف</th>
                     </tr>
                 </thead>
                 <tbody>
-                    {{-- @foreach ($seos as $key => $seo)
+                    @foreach ($heroes as $key => $hero)
                         <tr>
                             <td>{{ $key + 1 }}</td>
-                            <td>{{ $seo->title }}</td>
-                            <td>{{ \Illuminate\Support\Str::limit($seo->description, 20, '...') }}</td>
-                            <td>{{ $seo->site_name }}</td>
-                            <td>{{ $seo->site_url }}</td>
-                            <td>{{ $seo->twitter_name }}</td>
                             <td>
-                                <a href="{{ route('seo.edit', $seo->id) }}" class="text-success"><i
+                                <img src="{{ asset('admin/images/hero/' . $hero->image) }}" width="100px" alt="">
+                            </td>
+                            <td>{{ $hero->established }}</td>
+                            <td>{{ \Illuminate\Support\Str::limit($hero->description, 20, '...') }}</td>
+                            <td>{{ $hero->about }}</td>
+                            <td>
+                                <a href="{{ route('home.edit', $hero->id) }}" class="text-success"><i
                                         class="fas fa-edit"></i></a>
                             </td>
                             <td>
-                                <a href="{{ route('seo.destroy', $seo->id) }}"
-                                    onclick="destroySeo(event,{{ $seo->id }})" class="text-danger"><i
-                                        class="fas fa-trash-alt"></i></a>
-                                <form action="{{ route('seo.destroy', $seo->id) }}" method="post"
-                                    id="destroy-seo-{{ $seo->id }}">
+                                <a href="" onclick="" class="text-danger"><i class="fas fa-trash-alt"></i></a>
+                                <form action="" method="post" id="">
                                     @csrf
                                     @method('DELETE')
                                 </form>
                             </td>
                         </tr>
-                    @endforeach --}}
+                    @endforeach
                 </tbody>
             </table>
         </div>

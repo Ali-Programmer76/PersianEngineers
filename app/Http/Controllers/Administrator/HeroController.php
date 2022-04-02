@@ -10,7 +10,8 @@ class HeroController extends Controller
 {
     public function index()
     {
-        return view('admin.hero.index');
+        $heroes = Hero::paginate(3);
+        return view('admin.hero.index', compact('heroes'));
     }
 
     public function create()
@@ -44,12 +45,33 @@ class HeroController extends Controller
 
     public function edit($id)
     {
-        //
+        $hero = Hero::findOrFail($id);
+        return view('admin.hero.edit', compact('hero'));
     }
 
     public function update(Request $request, $id)
     {
-        //
+        $hero = Hero::findOrFail($id);
+        $uploaded_file = $request->file('image');
+        $image_name = "";
+        if (!empty($uploaded_file)) {
+            if (file_exists('admin/images/hero/' . $hero->image)) {
+                unlink('admin/images/hero/' . $hero->image);
+            }
+            $image_name = time() . "." . $uploaded_file->getClientOriginalExtension();
+            $uploaded_file->move('admin/images/hero', $image_name);
+        } else {
+            $image_name = $hero->image;
+        }
+        $hero->update([
+            'image' => $image_name,
+            'established' => $request->established,
+            'description' => $request->description,
+            'about' => $request->about,
+            'question' => $request->question
+        ]);
+        session()->flash('update');
+        return redirect()->route('home.index');
     }
 
     public function destroy($id)
