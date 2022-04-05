@@ -3,6 +3,8 @@
 namespace App\Http\Controllers\Administrator;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\Administrator\Hero\CreateHeroRequest;
+use App\Http\Requests\Administrator\Hero\UpdateHeroRequest;
 use App\Models\Hero;
 use Illuminate\Http\Request;
 
@@ -19,7 +21,7 @@ class HeroController extends Controller
         return view('admin.hero.create');
     }
 
-    public function store(Request $request)
+    public function store(CreateHeroRequest $request)
     {
         $uploaded_file = $request->file('image');
         $image_name = "";
@@ -49,7 +51,7 @@ class HeroController extends Controller
         return view('admin.hero.edit', compact('hero'));
     }
 
-    public function update(Request $request, $id)
+    public function update(UpdateHeroRequest $request, $id)
     {
         $hero = Hero::findOrFail($id);
         $uploaded_file = $request->file('image');
