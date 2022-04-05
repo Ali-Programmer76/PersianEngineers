@@ -76,6 +76,13 @@ class HeroController extends Controller
 
     public function destroy($id)
     {
-        //
+        $hero = Hero::findOrFail($id);
+        $image_name = $hero->image;
+        if (file_exists('admin/images/hero/' . $image_name)) {
+            unlink('admin/images/hero/' . $image_name);
+        }
+        $hero->delete();
+        session()->flash('delete');
+        return redirect()->route('home.index');
     }
 }

@@ -36,8 +36,11 @@
                                         class="fas fa-edit"></i></a>
                             </td>
                             <td>
-                                <a href="" onclick="" class="text-danger"><i class="fas fa-trash-alt"></i></a>
-                                <form action="" method="post" id="">
+                                <a href="{{ route('home.destroy', $hero->id) }}"
+                                    onclick="destroyItem(event,{{ $hero->id }})" class="text-danger"><i
+                                        class="fas fa-trash-alt"></i></a>
+                                <form action="{{ route('home.destroy', $hero->id) }}" method="post"
+                                    id="destroy-item-{{ $hero->id }}">
                                     @csrf
                                     @method('DELETE')
                                 </form>
@@ -47,9 +50,9 @@
                 </tbody>
             </table>
         </div>
-        {{-- <div class="pagination">
-            {{ $seos->links() }}
-        </div> --}}
+        <div class="pagination">
+            {{ $heroes->links() }}
+        </div>
     </div>
 @endsection
 
