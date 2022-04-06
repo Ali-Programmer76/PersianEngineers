@@ -24,7 +24,7 @@
             <span class="sidebar-icon"><i class="fas fa-laptop-house"></i></span>
             خانه
         </a>
-        <a href="" class="sidebar-link">
+        <a href="{{ route('about.index') }}" class="sidebar-link @if (request()->is('dashboard/about')) active @endif">
             <span class="sidebar-icon"><i class="fas fa-address-card"></i></span>
             درباره ما
         </a>

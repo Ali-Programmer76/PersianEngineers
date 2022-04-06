@@ -67,7 +67,8 @@
                 </div>
             </div>
             <div class="col-md-6 mt-3 mt-md-0">
-                <div class="about-img" style="background-image: url('{{ asset('/front/images/about.png') }}');">
+                <div class="about-img">
+                    <img src="{{ asset('/front/images/about.png') }}" class="about-img-repair" alt="">
                     <div class="about-counter-wrap d-flex align-items-center p-1">
                         <div class="about-icon w-25">
                             <img src={{ asset('/front/images/engineer.png') }} alt="" class="w-100" />
