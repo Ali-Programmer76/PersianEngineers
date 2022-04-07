@@ -5,7 +5,7 @@
         <div class="content-header my-2">
             <h3>تنظیمات بخش درباره ما</h3>
             <div>
-                <a href="{{ route('home.create') }}">تنظیم درباره ما</a>
+                <a href="{{ route('about.create') }}">تنظیم درباره ما</a>
             </div>
         </div>
         <div class="table-responsive my-2">
