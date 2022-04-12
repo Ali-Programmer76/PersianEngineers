@@ -13,17 +13,43 @@
                 <thead>
                     <tr>
                         <th>#</th>
+                        <th>تصویر بخش درباره ما</th>
+                        <th>عنوان بخش درباره ما</th>
+                        <th>درباره شرکت</th>
+                        <th>سال تجربه کاری</th>
                         <th>ویرایش</th>
                         <th>حذف</th>
                     </tr>
                 </thead>
                 <tbody>
+                    @foreach ($abouts as $key => $about)
+                        <tr>
+                            <td>{{ $key + 1 }}</td>
+                            <td>
+                                <img src="{{ asset('admin/images/about/' . $about->image) }}" width="100px" alt="">
+                            </td>
+                            <td>{{ $about->title }}</td>
+                            <td>{{ \Illuminate\Support\Str::limit($about->description, 40, '...') }}</td>
+                            <td>{{ $about->experience_title }}</td>
+                            <td>
+                                <a href="{{ route('about.edit', $about->id) }}" class="text-success"><i
+                                        class="fas fa-edit"></i></a>
+                            </td>
+                            <td>
+                                <a href="" onclick="" class="text-danger"><i class="fas fa-trash-alt"></i></a>
+                                <form action="" method="post" id="">
+                                    @csrf
+                                    @method('DELETE')
+                                </form>
+                            </td>
+                        </tr>
+                    @endforeach
                 </tbody>
             </table>
         </div>
-        {{-- <div class="pagination">
-            {{ $heroes->links() }}
-        </div> --}}
+        <div class="pagination">
+            {{ $abouts->links() }}
+        </div>
     </div>
 @endsection
 
