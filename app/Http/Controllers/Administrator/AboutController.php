@@ -100,6 +100,12 @@ class AboutController extends Controller
 
     public function destroy($id)
     {
-        //
+        $about = About::findOrFail($id);
+        if (file_exists('admin/images/about/' . $about->image)) {
+            unlink('admin/images/about/' . $about->image);
+        }
+        $about->delete();
+        session()->flash('delete');
+        return redirect()->route('about.index');
     }
 }

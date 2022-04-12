@@ -36,8 +36,11 @@
                                         class="fas fa-edit"></i></a>
                             </td>
                             <td>
-                                <a href="" onclick="" class="text-danger"><i class="fas fa-trash-alt"></i></a>
-                                <form action="" method="post" id="">
+                                <a href="{{ route('about.destroy', $about->id) }}"
+                                    onclick="destroyItem(event,{{ $about->id }})" class="text-danger"><i
+                                        class="fas fa-trash-alt"></i></a>
+                                <form action="{{ route('about.destroy', $about->id) }}" method="post"
+                                    id="destroy-item-{{ $about->id }}">
                                     @csrf
                                     @method('DELETE')
                                 </form>
