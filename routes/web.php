@@ -24,5 +24,6 @@ Route::middleware(['auth', 'admin'])->resource('/dashboard/seo', App\Http\Contro
 Route::middleware(['auth', 'admin'])->resource('/dashboard/topHeader', App\Http\Controllers\Administrator\TopHeaderController::class)->parameters(['topHeader' => 'id']);
 Route::middleware(['auth', 'admin'])->resource('/dashboard/home', App\Http\Controllers\Administrator\HeroController::class)->parameters(['home' => 'id']);
 Route::middleware(['auth', 'admin'])->resource('/dashboard/about', App\Http\Controllers\Administrator\AboutController::class)->parameters(['about' => 'id']);
+Route::middleware(['auth', 'admin'])->resource('/dashboard/introduction', App\Http\Controllers\Administrator\IntroductionController::class)->parameters(['introduction' => 'id']);
 
 require __DIR__ . '/auth.php';

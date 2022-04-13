@@ -28,7 +28,8 @@
             <span class="sidebar-icon"><i class="fas fa-address-card"></i></span>
             درباره ما
         </a>
-        <a href="" class="sidebar-link">
+        <a href="{{ route('introduction.index') }}"
+            class="sidebar-link @if (request()->is('dashboard/introduction')) active @endif">
             <span class="sidebar-icon"><i class="fas fa-book-open"></i></span>
             مقدمه
         </a>
