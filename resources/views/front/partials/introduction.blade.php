@@ -1,4 +1,5 @@
-<section class="introduction py-md-5" style="background-image: url('{{ asset('front/images/intro-1.jpeg') }}');">
+<section class="introduction py-md-5"
+    style="background-image: url('{{ asset('admin/images/introduction/' . $introduction->image) }}');">
     <div class="overlay"></div>
     <div class="container-lg py-5">
         <div class="row">
@@ -7,15 +8,14 @@
                     <div class="row justify-content-center align-items-center">
                         <div class="col-md-8">
                             <div class="introduction-text">
-                                <h6 class="text-white">شما می توانید برای انجام کارهای فنی و مهندسی، ساختمانی و
-                                    نوسازی با ما تماس
-                                    بگیرید.</h6>
-                                <h1 class="mt-3">ما یک شرکت عالی هستیم</h1>
+                                <h6 class="text-white">{{ $introduction->title }}</h6>
+                                <h1 class="mt-3">{{ $introduction->description }}</h1>
                             </div>
                         </div>
                         <div class="col-md-4 mt-3 mt-md-0">
                             <div class="introduction-btn w-100 mx-auto">
-                                <a href="" class="btn btn-primary text-dark w-75 px-3 py-2">بستن قرارداد</a>
+                                <a href="{{ $introduction->link }}"
+                                    class="btn btn-primary text-dark w-75 px-3 py-2">بستن قرارداد</a>
                             </div>
                         </div>
                     </div>
