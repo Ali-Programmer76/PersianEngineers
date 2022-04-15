@@ -11,7 +11,8 @@ class IntroductionController extends Controller
 {
     public function index()
     {
-        return view('admin.introduction.index');
+        $introductions = Introduction::paginate(3);
+        return view('admin.introduction.index', compact('introductions'));
     }
 
     public function create()
@@ -44,12 +45,32 @@ class IntroductionController extends Controller
 
     public function edit($id)
     {
-        //
+        $introduction = Introduction::findOrFail($id);
+        return view('admin.introduction.edit', compact('introduction'));
     }
 
     public function update(Request $request, $id)
     {
-        //
+        $introduction = Introduction::findOrFail($id);
+        $uploaded_file = $request->file('image');
+        $image_name = "";
+        if (!empty($uploaded_file)) {
+            if (file_exists('admin/images/introduction/' . $introduction->image)) {
+                unlink('admin/images/introduction/' . $introduction->image);
+            }
+            $image_name = time() . "." . $uploaded_file->getClientOriginalExtension();
+            $uploaded_file->move('admin/images/introduction', $image_name);
+        } else {
+            $image_name = $introduction->image;
+        }
+        $introduction->update([
+            'image' => $image_name,
+            'title' => $request->title,
+            'description' => $request->description,
+            'link' => $request->link
+        ]);
+        session()->flash('update');
+        return redirect()->route('introduction.index');
     }
 
     public function destroy($id)

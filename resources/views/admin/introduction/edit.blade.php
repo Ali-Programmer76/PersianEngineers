@@ -3,24 +3,24 @@
 @section('content')
     <div class="content-item">
         <div class="content-header my-2">
-            <h3>ویرایش بخش خانه</h3>
+            <h3>ویرایش بخش مقدمه</h3>
         </div>
         <div class="my-2">
-            {!! Form::model($hero, ['method' => 'PUT', 'route' => ['home.update', $hero->id], 'files' => true]) !!}
+            {!! Form::model($introduction, ['method' => 'PUT', 'route' => ['introduction.update', $introduction->id], 'files' => true]) !!}
             <div class="form-group">
-                {!! Form::label('image', 'تصویر بخش خانه') !!}
+                {!! Form::label('image', 'تصویر بخش مقدمه') !!}
                 {!! Form::file('image', null) !!}
                 <p class="mt-2">
-                    <img src="{{ asset('admin/images/hero/' . $hero->image) }}" width="150px" alt="">
+                    <img src="{{ asset('admin/images/introduction/' . $introduction->image) }}" width="150px" alt="">
                 </p>
                 @error('image')
                     <p class="text-danger my-2">{{ $message }}</p>
                 @enderror
             </div>
             <div class="form-group">
-                {!! Form::label('established', 'سال تأسیس شرکت') !!}
-                {!! Form::text('established', null, ['placeholder' => 'سال تأسیس شرکت را وارد کنید...']) !!}
-                @error('established')
+                {!! Form::label('title', 'عنوان بخش مقدمه') !!}
+                {!! Form::text('title', null, ['placeholder' => 'عنوان بخش مقدمه را وارد کنید...']) !!}
+                @error('title')
                     <p class="text-danger my-2">{{ $message }}</p>
                 @enderror
             </div>
@@ -32,16 +32,9 @@
                 @enderror
             </div>
             <div class="form-group">
-                {!! Form::label('about', 'لینک درباره ما') !!}
-                {!! Form::text('about', null, ['placeholder' => 'لینک بخش درباره ما را وارد کنید...']) !!}
-                @error('about')
-                    <p class="text-danger my-2">{{ $message }}</p>
-                @enderror
-            </div>
-            <div class="form-group">
-                {!! Form::label('question', 'لینک سؤالات متداول') !!}
-                {!! Form::text('question', null, ['placeholder' => 'لینک بخش سؤالات متداول را وارد کنید...']) !!}
-                @error('question')
+                {!! Form::label('link', 'لینک بخش مقدمه') !!}
+                {!! Form::text('link', null, ['placeholder' => 'لینک بخش مقدمه را وارد کنید...']) !!}
+                @error('link')
                     <p class="text-danger my-2">{{ $message }}</p>
                 @enderror
             </div>
