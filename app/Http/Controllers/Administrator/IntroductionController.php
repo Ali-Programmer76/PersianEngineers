@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Administrator;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Administrator\Introduction\CreateIntroductionRequest;
+use App\Http\Requests\Administrator\Introduction\UpdateIntroductionRequest;
 use App\Models\Introduction;
 use Illuminate\Http\Request;
 
@@ -49,7 +50,7 @@ class IntroductionController extends Controller
         return view('admin.introduction.edit', compact('introduction'));
     }
 
-    public function update(Request $request, $id)
+    public function update(UpdateIntroductionRequest $request, $id)
     {
         $introduction = Introduction::findOrFail($id);
         $uploaded_file = $request->file('image');
