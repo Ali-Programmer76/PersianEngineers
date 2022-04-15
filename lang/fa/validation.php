@@ -192,5 +192,6 @@ return [
         'service_description_fourth'   => 'درباره خدمت چهارم',
         'experience_title'      => 'سال تجربه کاری شرکت',
         'experience_description'       => 'درباره تجربه کاری شرکت',
+        'link'                  => 'لینک',
     ],
 ];
