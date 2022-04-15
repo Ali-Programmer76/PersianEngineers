@@ -76,6 +76,12 @@ class IntroductionController extends Controller
 
     public function destroy($id)
     {
-        //
+        $introduction = Introduction::findOrFail($id);
+        if (file_exists('admin/images/introduction/' . $introduction->image)) {
+            unlink('admin/images/introduction/' . $introduction->image);
+        }
+        $introduction->delete();
+        session()->flash('delete');
+        return redirect()->route('introduction.index');
     }
 }
