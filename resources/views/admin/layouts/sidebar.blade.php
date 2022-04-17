@@ -33,7 +33,7 @@
             <span class="sidebar-icon"><i class="fas fa-book-open"></i></span>
             مقدمه
         </a>
-        <a href="" class="sidebar-link">
+        <a href="{{ route('service.index') }}" class="sidebar-link @if (request()->is('dashboard/service')) active @endif">
             <span class="sidebar-icon"><i class="fas fa-cogs"></i></span>
             خدمات
         </a>

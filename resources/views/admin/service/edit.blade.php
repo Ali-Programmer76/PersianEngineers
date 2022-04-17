@@ -1,0 +1,47 @@
+@extends('admin.layouts.master')
+
+@section('content')
+    <div class="content-item">
+        <div class="content-header my-2">
+            <h3>ویرایش بخش مقدمه</h3>
+        </div>
+        <div class="my-2">
+            {!! Form::model($introduction, ['method' => 'PUT', 'route' => ['introduction.update', $introduction->id], 'files' => true]) !!}
+            <div class="form-group">
+                {!! Form::label('image', 'تصویر بخش مقدمه') !!}
+                {!! Form::file('image', null) !!}
+                <p class="mt-2">
+                    <img src="{{ asset('admin/images/introduction/' . $introduction->image) }}" width="150px" alt="">
+                </p>
+                @error('image')
+                    <p class="text-danger my-2">{{ $message }}</p>
+                @enderror
+            </div>
+            <div class="form-group">
+                {!! Form::label('title', 'عنوان بخش مقدمه') !!}
+                {!! Form::text('title', null, ['placeholder' => 'عنوان بخش مقدمه را وارد کنید...']) !!}
+                @error('title')
+                    <p class="text-danger my-2">{{ $message }}</p>
+                @enderror
+            </div>
+            <div class="form-group">
+                {!! Form::label('description', 'درباره شرکت') !!}
+                {!! Form::text('description', null, ['placeholder' => 'درباره شرکت خود بنویسید...']) !!}
+                @error('description')
+                    <p class="text-danger my-2">{{ $message }}</p>
+                @enderror
+            </div>
+            <div class="form-group">
+                {!! Form::label('link', 'لینک بخش مقدمه') !!}
+                {!! Form::text('link', null, ['placeholder' => 'لینک بخش مقدمه را وارد کنید...']) !!}
+                @error('link')
+                    <p class="text-danger my-2">{{ $message }}</p>
+                @enderror
+            </div>
+            <div class="form-group">
+                {!! Form::submit('ثبت اطلاعات', ['class' => 'btn-form']) !!}
+            </div>
+            {!! Form::close() !!}
+        </div>
+    </div>
+@endsection
