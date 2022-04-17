@@ -3,6 +3,8 @@
 namespace App\Http\Controllers\Administrator;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\Administrator\Service\CreateServiceRequest;
+use App\Models\Service;
 use Illuminate\Http\Request;
 
 class ServiceController extends Controller
@@ -14,12 +16,32 @@ class ServiceController extends Controller
 
     public function create()
     {
-        //
+        return view('admin.service.create');
     }
 
-    public function store(Request $request)
+    public function store(CreateServiceRequest $request)
     {
-        //
+        $uploaded_file = $request->file('image');
+        $image_name = "";
+        if (!empty($uploaded_file)) {
+            $image_name = time() . "." . $uploaded_file->getClientOriginalExtension();
+            $uploaded_file->move('admin/images/service', $image_name);
+        }
+        Service::create([
+            'image' => $image_name,
+            'alt' => $request->alt,
+            'service_title_first' => $request->service_title_first,
+            'service_description_first' => $request->service_description_first,
+            'service_link_first' => $request->service_link_first,
+            'service_title_second' => $request->service_title_second,
+            'service_description_second' => $request->service_description_second,
+            'service_link_second' => $request->service_link_second,
+            'service_title_third' => $request->service_title_third,
+            'service_description_third' => $request->service_description_third,
+            'service_link_third' => $request->service_link_third,
+        ]);
+        session()->flash('create');
+        return redirect()->route('service.index');
     }
 
     public function show($id)
