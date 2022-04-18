@@ -24,7 +24,7 @@ class UpdateAboutRequest extends FormRequest
     public function rules()
     {
         return [
-            'image' => 'image|mimes:png,jpg,jpeg|max:5000',
+            'image' => 'image|mimes:png,jpg,jpeg,webp|max:5000',
             'alt' => 'required|string|max:250',
             'title' => 'required|string|max:250',
             'subtitle' => 'required|string|max:250',

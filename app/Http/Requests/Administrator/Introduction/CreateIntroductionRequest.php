@@ -24,7 +24,7 @@ class CreateIntroductionRequest extends FormRequest
     public function rules()
     {
         return [
-            'image' => 'required|image|mimes:png,jpg,jpeg|max:5000',
+            'image' => 'required|image|mimes:png,jpg,jpeg,webp|max:5000',
             'title' => 'required|string|max:250',
             'description' => 'required|string|max:500',
             'link' => 'required|string|max:250',

@@ -24,7 +24,7 @@ class UpdateHeroRequest extends FormRequest
     public function rules()
     {
         return [
-            'image' => 'image|mimes:png,jpg,jpeg|max:5000',
+            'image' => 'image|mimes:png,jpg,jpeg,webp|max:5000',
             'established' => 'required|string|max:50',
             'description' => 'required|string|max:500',
             'about' => 'required|string|max:100',

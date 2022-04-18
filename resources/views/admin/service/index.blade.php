@@ -13,17 +13,39 @@
                 <thead>
                     <tr>
                         <th>#</th>
+                        <th>تصویر بخش خدمات</th>
+                        <th>توضیحات تصویر بخش خدمات</th>
                         <th>ویرایش</th>
                         <th>حذف</th>
                     </tr>
                 </thead>
                 <tbody>
+                    @foreach ($services as $key => $service)
+                        <tr>
+                            <td>{{ $key + 1 }}</td>
+                            <td>
+                                <img src="{{ asset('admin/images/service/' . $service->image) }}" width="100px" alt="">
+                            </td>
+                            <td>{{ Str::limit($service->alt, 50, '...') }}</td>
+                            <td>
+                                <a href="{{ route('service.edit', $service->id) }}" class="text-success"><i
+                                        class="fas fa-edit"></i></a>
+                            </td>
+                            <td>
+                                <a href="" onclick="" class="text-danger"><i class="fas fa-trash-alt"></i></a>
+                                <form action="" method="post" id="">
+                                    @csrf
+                                    @method('DELETE')
+                                </form>
+                            </td>
+                        </tr>
+                    @endforeach
                 </tbody>
             </table>
         </div>
-        {{-- <div class="pagination">
-            {{ $introductions->links() }}
-        </div> --}}
+        <div class="pagination">
+            {{ $services->links() }}
+        </div>
     </div>
 @endsection
 
