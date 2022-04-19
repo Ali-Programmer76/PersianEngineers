@@ -7,6 +7,7 @@ use App\Models\About;
 use App\Models\Hero;
 use App\Models\Introduction;
 use App\Models\Seo;
+use App\Models\Service;
 use App\Models\TopHeader;
 use Illuminate\Http\Request;
 
@@ -19,6 +20,7 @@ class HomeController extends Controller
         $hero = Hero::orderBy('id', 'desc')->take(1)->first();
         $about = About::orderBy('id', 'desc')->take(1)->first();
         $introduction = Introduction::orderBy('id', 'desc')->take(1)->first();
-        return view('front.index', compact('seo', 'topHeader', 'hero', 'about', 'introduction'));
+        $service = Service::orderBy('id', 'desc')->take(1)->first();
+        return view('front.index', compact('seo', 'topHeader', 'hero', 'about', 'introduction', 'service'));
     }
 }

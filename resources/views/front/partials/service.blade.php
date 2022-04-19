@@ -16,13 +16,10 @@
                                         width="80" class="bg-light" />
                                 </div>
                                 <div class="service-item-text pe-5">
-                                    <h1 class="text-dark fs-3 fw-bold">ساخت و ساز</h1>
-                                    <p class="text-dark my-3">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت
-                                        چاپ
-                                        و با استفاده از
-                                        طراحان گرافیک است.
-                                    </p>
-                                    <a href="" class="btn btn-light text-primary fw-bold shadow-lg">بیشتر
+                                    <h1 class="text-dark fs-3 fw-bold">{{ $service->service_title_first }}</h1>
+                                    <p class="text-dark my-3">{{ $service->service_description_first }}</p>
+                                    <a href="{{ $service->service_link_first }}"
+                                        class="btn btn-light text-primary fw-bold shadow-lg">بیشتر
                                         بخوانید</a>
                                 </div>
                             </div>
@@ -35,14 +32,10 @@
                                         width="80" class="bg-primary" />
                                 </div>
                                 <div class="service-item-text pe-5">
-                                    <h1 class="text-white fs-3 fw-bold">ساخت و ساز</h1>
-                                    <p class="text-white my-3">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از
-                                        صنعت
-                                        چاپ
-                                        و با استفاده از
-                                        طراحان گرافیک است.
-                                    </p>
-                                    <a href="" class="btn btn-light text-primary fw-bold">بیشتر بخوانید</a>
+                                    <h1 class="text-white fs-3 fw-bold">{{ $service->service_title_second }}</h1>
+                                    <p class="text-white my-3">{{ $service->service_description_second }}</p>
+                                    <a href="{{ $service->service_link_second }}"
+                                        class="btn btn-light text-primary fw-bold">بیشتر بخوانید</a>
                                 </div>
                             </div>
                         </div>
@@ -54,22 +47,18 @@
                                         height="80" width="80" class="bg-dark" />
                                 </div>
                                 <div class="service-item-text pe-5">
-                                    <h1 class="text-white fs-3 fw-bold">ساخت و ساز</h1>
-                                    <p class="text-white my-3">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از
-                                        صنعت
-                                        چاپ
-                                        و با استفاده از
-                                        طراحان گرافیک است.
-                                    </p>
-                                    <a href="" class="btn btn-light text-primary fw-bold">بیشتر بخوانید</a>
+                                    <h1 class="text-white fs-3 fw-bold">{{ $service->service_title_third }}</h1>
+                                    <p class="text-white my-3">{{ $service->service_description_third }}</p>
+                                    <a href="{{ $service->service_link_third }}"
+                                        class="btn btn-light text-primary fw-bold">بیشتر بخوانید</a>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="col-md-6 mt-3 mt-md-0">
-                    <div class="service-img d-flex align-items-center"
-                        style="background-image: url('{{ asset('/front/images/service.webp') }}');">
+                    <div class="service-img d-flex align-items-center">
+                        <img src="{{ asset('admin/images/service/' . $service->image) }}" alt="{{ $service->alt }}">
                     </div>
                 </div>
             </div>
