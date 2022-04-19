@@ -90,6 +90,12 @@ class ServiceController extends Controller
 
     public function destroy($id)
     {
-        //
+        $service = Service::findOrFail($id);
+        if (file_exists('admin/images/service/' . $service->image)) {
+            unlink('admin/images/service/' . $service->image);
+        }
+        $service->delete();
+        session()->flash('delete');
+        return redirect()->route('service.index');
     }
 }
