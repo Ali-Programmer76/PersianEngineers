@@ -37,6 +37,10 @@
             <span class="sidebar-icon"><i class="fas fa-cogs"></i></span>
             خدمات
         </a>
+        <a href="{{ route('counter.index') }}" class="sidebar-link  @if (request()->is('dashboard/counter')) active @endif">
+            <span class="sidebar-icon"><i class="fas fa-sort-numeric-up-alt"></i></span>
+            شمارنده
+        </a>
         <a href="" class="sidebar-link">
             <span class="sidebar-icon"><i class="fas fa-user-friends"></i></span>
             تیم ها
