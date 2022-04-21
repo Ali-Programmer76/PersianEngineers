@@ -13,16 +13,41 @@
                 <thead>
                     <tr>
                         <th>#</th>
+                        <th>تصویر بخش شمارنده</th>
+                        <th>عنوان شمارنده</th>
+                        <th>توضیحات شمارنده</th>
                         <th>ویرایش</th>
                         <th>حذف</th>
                     </tr>
                 </thead>
-                <tbody></tbody>
+                <tbody>
+                    @foreach ($counters as $key => $counter)
+                        <tr>
+                            <td>{{ $key + 1 }}</td>
+                            <td>
+                                <img src="{{ asset('admin/images/counter/' . $counter->image) }}" width="100px" alt="">
+                            </td>
+                            <td>{{ $counter->title }}</td>
+                            <td>{{ $counter->description }}</td>
+                            <td>
+                                <a href="{{ route('counter.edit', $counter->id) }}" class="text-success"><i
+                                        class="fas fa-edit"></i></a>
+                            </td>
+                            <td>
+                                <a href="" onclick="" class="text-danger"><i class="fas fa-trash-alt"></i></a>
+                                <form action="" method="post" id="">
+                                    @csrf
+                                    @method('DELETE')
+                                </form>
+                            </td>
+                        </tr>
+                    @endforeach
+                </tbody>
             </table>
         </div>
-        {{-- <div class="pagination">
-            {{ $services->links() }}
-        </div> --}}
+        <div class="pagination">
+            {{ $counters->links() }}
+        </div>
     </div>
 @endsection
 
