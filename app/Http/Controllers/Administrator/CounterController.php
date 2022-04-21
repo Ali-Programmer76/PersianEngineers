@@ -74,6 +74,12 @@ class CounterController extends Controller
 
     public function destroy($id)
     {
-        //
+        $counter = Counter::findOrFail($id);
+        if (file_exists('admin/images/counter/' . $counter->image)) {
+            unlink('admin/images/counter/' . $counter->image);
+        }
+        $counter->delete();
+        session()->flash('delete');
+        return redirect()->route('counter.index');
     }
 }
