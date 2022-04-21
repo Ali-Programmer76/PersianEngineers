@@ -5,7 +5,7 @@
         <div class="content-header my-2">
             <h3>تنظیمات بخش شمارنده</h3>
             <div>
-                <a href="">تنظیم شمارنده</a>
+                <a href="{{ route('counter.create') }}">تنظیم شمارنده</a>
             </div>
         </div>
         <div class="table-responsive my-2">
