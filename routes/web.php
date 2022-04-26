@@ -27,5 +27,6 @@ Route::middleware(['auth', 'admin'])->resource('/dashboard/about', App\Http\Cont
 Route::middleware(['auth', 'admin'])->resource('/dashboard/introduction', App\Http\Controllers\Administrator\IntroductionController::class)->parameters(['introduction' => 'id']);
 Route::middleware(['auth', 'admin'])->resource('/dashboard/service', App\Http\Controllers\Administrator\ServiceController::class)->parameters(['service' => 'id']);
 Route::middleware(['auth', 'admin'])->resource('/dashboard/counter', App\Http\Controllers\Administrator\CounterController::class)->parameters(['counter' => 'id']);
+Route::middleware(['auth', 'admin'])->resource('/dashboard/team', App\Http\Controllers\Administrator\TeamController::class)->parameters(['team' => 'id']);
 
 require __DIR__ . '/auth.php';

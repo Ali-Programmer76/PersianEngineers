@@ -41,9 +41,9 @@
             <span class="sidebar-icon"><i class="fas fa-sort-numeric-up-alt"></i></span>
             شمارنده
         </a>
-        <a href="" class="sidebar-link">
+        <a href="{{ route('team.index') }}" class="sidebar-link  @if (request()->is('dashboard/team')) active @endif">
             <span class="sidebar-icon"><i class="fas fa-user-friends"></i></span>
-            تیم ها
+            تیم ما
         </a>
         <a href="" class="sidebar-link">
             <span class="sidebar-icon"><i class="fas fa-images"></i></span>
