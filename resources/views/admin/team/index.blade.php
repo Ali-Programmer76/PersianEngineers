@@ -5,7 +5,7 @@
         <div class="content-header my-2">
             <h3>تنظیمات بخش تیم ما</h3>
             <div>
-                <a href="{{ route('topHeader.create') }}">تنظیم تیم ما</a>
+                <a href="{{ route('team.create') }}">تنظیم تیم ما</a>
             </div>
         </div>
         <div class="table-responsive my-2">
