@@ -13,16 +13,43 @@
                 <thead>
                     <tr>
                         <th>#</th>
+                        <th>تصویر کارمند شرکت</th>
+                        <th>نام و نام خانوادگی</th>
+                        <th>سمت شغلی</th>
+                        <th>آدرس اینستاگرام</th>
                         <th>ویرایش</th>
                         <th>حذف</th>
                     </tr>
                 </thead>
-                <tbody></tbody>
+                <tbody>
+                    @foreach ($teams as $key => $team)
+                        <tr>
+                            <td>{{ $key + 1 }}</td>
+                            <td>
+                                <img src="{{ asset('admin/images/team/' . $team->image) }}" width="100px" alt="">
+                            </td>
+                            <td>{{ $team->name }}</td>
+                            <td>{{ $team->job }}</td>
+                            <td>{{ $team->instagram }}</td>
+                            <td>
+                                <a href="{{ route('team.edit', $team->id) }}" class="text-success"><i
+                                        class="fas fa-edit"></i></a>
+                            </td>
+                            <td>
+                                <a href="" onclick="" class="text-danger"><i class="fas fa-trash-alt"></i></a>
+                                <form action="" method="post" id="">
+                                    @csrf
+                                    @method('DELETE')
+                                </form>
+                            </td>
+                        </tr>
+                    @endforeach
+                </tbody>
             </table>
         </div>
-        {{-- <div class="pagination">
-            {{ $topHeaders->links() }}
-        </div> --}}
+        <div class="pagination">
+            {{ $teams->links() }}
+        </div>
     </div>
 @endsection
 

@@ -3,42 +3,59 @@
 @section('content')
     <div class="content-item">
         <div class="content-header my-2">
-            <h3>ویرایش بخش منوی بالایی</h3>
+            <h3>ویرایش بخش تیم ما</h3>
         </div>
         <div class="my-2">
-            {!! Form::model($topHeader, ['method' => 'PUT', 'route' => ['topHeader.update', $topHeader->id]]) !!}
+            {!! Form::model($team, ['method' => 'PUT', 'route' => ['team.update', $team->id], 'files' => true]) !!}
             <div class="form-group">
-                {!! Form::label('email', 'آدرس ایمیل شرکت') !!}
-                {!! Form::text('email', null, ['placeholder' => 'آدرس ایمیل شرکت را وارد کنید...']) !!}
-                @error('email')
+                {!! Form::label('image', 'تصویر کارمند شرکت') !!}
+                {!! Form::file('image', null) !!}
+                <p class="mt-2">
+                    <img src="{{ asset('admin/images/team/' . $team->image) }}" width="150px" alt="">
+                </p>
+                @error('image')
                     <p class="text-danger my-2">{{ $message }}</p>
                 @enderror
             </div>
             <div class="form-group">
-                {!! Form::label('phone', 'شماره تلفن شرکت') !!}
-                {!! Form::text('phone', null, ['placeholder' => 'شماره تلفن شرکت را بنویسید...']) !!}
-                @error('phone')
+                {!! Form::label('alt', 'توضیحات تصویر بخش تیم ما') !!}
+                {!! Form::textarea('alt', null, ['placeholder' => 'توضیحات تصویر بخش تیم ما را وارد کنید...']) !!}
+                @error('alt')
                     <p class="text-danger my-2">{{ $message }}</p>
                 @enderror
             </div>
             <div class="form-group">
-                {!! Form::label('instagram', 'آدرس اینستاگرام شرکت') !!}
-                {!! Form::text('instagram', null, ['placeholder' => 'آدرس اینستاگرام شرکت را وارد کنید...']) !!}
+                {!! Form::label('name', 'نام و نام خانوادگی کارمند شرکت') !!}
+                {!! Form::text('name', null, ['placeholder' => 'نام و نام خانوادگی کارمند شرکت را وارد کنید...']) !!}
+                @error('name')
+                    <p class="text-danger my-2">{{ $message }}</p>
+                @enderror
+            </div>
+            <div class="form-group">
+                {!! Form::label('job', 'سمت شغلی') !!}
+                {!! Form::text('job', null, ['placeholder' => 'سمت شغلی را وارد کنید...']) !!}
+                @error('job')
+                    <p class="text-danger my-2">{{ $message }}</p>
+                @enderror
+            </div>
+            <div class="form-group">
+                {!! Form::label('instagram', 'آدرس اینستاگرام کارمند شرکت') !!}
+                {!! Form::text('instagram', null, ['placeholder' => 'آدرس اینستاگرام کارمند شرکت را وارد کنید...']) !!}
                 @error('instagram')
                     <p class="text-danger my-2">{{ $message }}</p>
                 @enderror
             </div>
             <div class="form-group">
-                {!! Form::label('twitter', 'آدرس توییتر شرکت') !!}
-                {!! Form::text('twitter', null, ['placeholder' => 'آدرس توییتر شرکت را وارد کنید...']) !!}
+                {!! Form::label('twitter', 'آدرس توییتر کارمند شرکت') !!}
+                {!! Form::text('twitter', null, ['placeholder' => 'آدرس توییتر کارمند شرکت را وارد کنید...']) !!}
                 @error('twitter')
                     <p class="text-danger my-2">{{ $message }}</p>
                 @enderror
             </div>
             <div class="form-group">
-                {!! Form::label('telegram', 'آدرس کانال تلگرام شرکت') !!}
-                {!! Form::text('telegram', null, ['placeholder' => 'آدرس کانال تلگرام شرکت را وارد کنید...']) !!}
-                @error('telegram')
+                {!! Form::label('linkedin', 'آدرس لینکداین کارمند شرکت') !!}
+                {!! Form::text('linkedin', null, ['placeholder' => 'آدرس لینکداین کارمند شرکت را وارد کنید...']) !!}
+                @error('linkedin')
                     <p class="text-danger my-2">{{ $message }}</p>
                 @enderror
             </div>
