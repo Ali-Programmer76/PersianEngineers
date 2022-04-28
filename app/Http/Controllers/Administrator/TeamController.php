@@ -82,6 +82,12 @@ class TeamController extends Controller
 
     public function destroy($id)
     {
-        //
+        $team = Team::findOrFail($id);
+        if (file_exists('admin/images/team/' . $team->image)) {
+            unlink('admin/images/team/' . $team->image);
+        }
+        $team->delete();
+        session()->flash('delete');
+        return redirect()->route('team.index');
     }
 }
