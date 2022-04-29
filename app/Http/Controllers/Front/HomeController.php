@@ -9,6 +9,7 @@ use App\Models\Hero;
 use App\Models\Introduction;
 use App\Models\Seo;
 use App\Models\Service;
+use App\Models\Team;
 use App\Models\TopHeader;
 use Illuminate\Http\Request;
 
@@ -23,6 +24,7 @@ class HomeController extends Controller
         $introduction = Introduction::orderBy('id', 'desc')->take(1)->first();
         $service = Service::orderBy('id', 'desc')->take(1)->first();
         $counters = Counter::orderBy('id', 'desc')->take(4)->get();
-        return view('front.index', compact('seo', 'topHeader', 'hero', 'about', 'introduction', 'service', 'counters'));
+        $teams = Team::orderBy('id', 'desc')->take(4)->get();
+        return view('front.index', compact('seo', 'topHeader', 'hero', 'about', 'introduction', 'service', 'counters', 'teams'));
     }
 }

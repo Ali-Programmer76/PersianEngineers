@@ -368,11 +368,15 @@ header {
 .team .team-item .team-item-img {
     width: 100%;
     height: 400px;
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
     position: relative;
-    border-radius: 5px 5px 0 0;
+}
+
+.team .team-item .team-item-img img {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    border-radius: 10px 10px 0 0;
+    object-fit: cover;
 }
 
 .team .team-item .team-item-img ul {
