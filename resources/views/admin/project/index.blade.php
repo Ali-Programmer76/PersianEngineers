@@ -5,7 +5,7 @@
         <div class="content-header my-2">
             <h3>تنظیمات بخش پروژه ها</h3>
             <div>
-                <a href="">تنظیم پروژه</a>
+                <a href="{{ route('project.create') }}">تنظیم پروژه</a>
             </div>
         </div>
         <div class="table-responsive my-2">
