@@ -45,9 +45,10 @@
             <span class="sidebar-icon"><i class="fas fa-user-friends"></i></span>
             تیم ما
         </a>
-        <a href="" class="sidebar-link">
+        <a href="{{ route('project.index') }}"
+            class="sidebar-link  @if (request()->is('dashboard/project')) active @endif">
             <span class="sidebar-icon"><i class="fas fa-images"></i></span>
-            نمونه کارها
+            پروژه ها
         </a>
         <a href="" class="sidebar-link">
             <span class="sidebar-icon"><i class="fas fa-comment-alt"></i></span>
