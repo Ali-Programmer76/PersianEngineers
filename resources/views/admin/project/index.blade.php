@@ -13,16 +13,43 @@
                 <thead>
                     <tr>
                         <th>#</th>
+                        <th>تصویر پروژه</th>
+                        <th>توضیحات تصویر پروژه</th>
+                        <th>عنوان پروژه</th>
+                        <th>درباره پروژه</th>
                         <th>ویرایش</th>
                         <th>حذف</th>
                     </tr>
                 </thead>
-                <tbody></tbody>
+                <tbody>
+                    @foreach ($projects as $key => $project)
+                        <tr>
+                            <td>{{ $key + 1 }}</td>
+                            <td>
+                                <img src="{{ asset('admin/images/project/' . $project->image) }}" width="100px" alt="">
+                            </td>
+                            <td>{{ Str::limit($project->alt, 40, '...') }}</td>
+                            <td>{{ $project->title }}</td>
+                            <td>{{ $project->description }}</td>
+                            <td>
+                                <a href="{{ route('project.edit', $project->id) }}" class="text-success"><i
+                                        class="fas fa-edit"></i></a>
+                            </td>
+                            <td>
+                                <a href="" onclick="" class="text-danger"><i class="fas fa-trash-alt"></i></a>
+                                <form action="" method="post" id="">
+                                    @csrf
+                                    @method('DELETE')
+                                </form>
+                            </td>
+                        </tr>
+                    @endforeach
+                </tbody>
             </table>
         </div>
-        {{-- <div class="pagination">
-            {{ $teams->links() }}
-        </div> --}}
+        <div class="pagination">
+            {{ $projects->links() }}
+        </div>
     </div>
 @endsection
 

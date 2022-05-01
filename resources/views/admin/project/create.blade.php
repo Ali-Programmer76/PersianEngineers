@@ -29,8 +29,8 @@
                 @enderror
             </div>
             <div class="form-group">
-                {!! Form::label('description', 'توضیحات پروژه') !!}
-                {!! Form::text('description', null, ['placeholder' => 'توضیحات پروژه را وارد کنید...']) !!}
+                {!! Form::label('description', 'درباره پروژه') !!}
+                {!! Form::text('description', null, ['placeholder' => 'درباره این پروژه شرکت بنویسید...']) !!}
                 @error('description')
                     <p class="text-danger my-2">{{ $message }}</p>
                 @enderror
