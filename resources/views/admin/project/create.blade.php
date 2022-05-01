@@ -15,6 +15,13 @@
                 @enderror
             </div>
             <div class="form-group">
+                {!! Form::label('alt', 'توضیحات تصویر پروژه') !!}
+                {!! Form::text('alt', null, ['placeholder' => 'توضیحات تصویر پروژه را وارد کنید...']) !!}
+                @error('alt')
+                    <p class="text-danger my-2">{{ $message }}</p>
+                @enderror
+            </div>
+            <div class="form-group">
                 {!! Form::label('title', 'عنوان پروژه') !!}
                 {!! Form::text('title', null, ['placeholder' => 'عنوان پروژه را وارد کنید...']) !!}
                 @error('title')

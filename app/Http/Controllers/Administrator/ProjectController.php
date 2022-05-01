@@ -29,6 +29,7 @@ class ProjectController extends Controller
         }
         Project::create([
             'image' => $image_name,
+            'alt' => $request->alt,
             'title' => $request->title,
             'description' => $request->description
         ]);

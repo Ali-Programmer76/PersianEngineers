@@ -25,6 +25,7 @@ class CreateProjectRequest extends FormRequest
     {
         return [
             'image' => 'required|image|mimes:png,jpg,jpeg,webp|max:5000',
+            'alt' => 'required|string|max:200',
             'title' => 'required|string|max:100',
             'description' => 'required|string|max:200'
         ];
