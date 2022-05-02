@@ -76,6 +76,12 @@ class ProjectController extends Controller
 
     public function destroy($id)
     {
-        //
+        $project = Project::query()->findOrFail($id);
+        if (file_exists('admin/images/project/' . $project->image)) {
+            unlink('admin/images/project/' . $project->image);
+        }
+        $project->delete();
+        session()->flash('delete');
+        return redirect()->route('project.index');
     }
 }
