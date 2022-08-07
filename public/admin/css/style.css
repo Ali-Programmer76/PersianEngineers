@@ -1,0 +1,337 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap');
+
+@font-face {
+    font-family: 'vazir';
+    src: url('../fonts/Vazir.eot'),
+        url('../fonts/Vazir.woff') format('woff'),
+        url('../fonts/Vazir.ttf') format('truetype');
+}
+
+body {
+    font-family: 'Poppins', 'vazir';
+    direction: rtl;
+    text-align: right;
+    background-color: #1b203d;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Sidebar */
+
+#mySlideNav.slide-nav {
+    width: 300px;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    right: 0;
+    background-color: #272c4a;
+    padding-top: 20px;
+    transition: all 0.5s ease-in-out;
+}
+
+.slide-nav .logo {
+    color: #fff;
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
+    font-size: 20px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    margin-bottom: 10px;
+}
+
+.slide-nav .logo span {
+    color: #f7403b;
+    font-size: 30px;
+}
+
+.slide-nav .sidebar-link {
+    position: relative;
+    display: flex;
+    align-items: center;
+    color: #818188;
+    text-decoration: none;
+    padding: 7px 20px;
+    font-size: 10px;
+    transition: all 0.2s ease-in-out;
+}
+
+.footer-submenu {
+    height: 0;
+    overflow: hidden;
+    background-color: #373d5e;
+    transition: all 0.3s ease-in-out;
+}
+
+.footer-submenu.display {
+    height: 140px;
+    overflow: visible;
+}
+
+.sidebar-link.footer-menu .fa-chevron-down {
+    position: absolute;
+    left: 10px;
+}
+
+.slide-nav .sidebar-link .sidebar-icon svg {
+    margin-left: 10px;
+    transition: all 0.5s ease-in-out;
+}
+
+.slide-nav .sidebar-link.active {
+    background-color: #1b203d;
+    color: azure;
+}
+
+.slide-nav .sidebar-link:hover {
+    color: azure;
+}
+
+
+/* Main - Header */
+
+#adminMain.main {
+    margin-right: 300px;
+    padding: 20px;
+    transition: all 0.5s ease-in-out;
+}
+
+.main .header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+}
+
+.main .header .first-nav {
+    color: #fff;
+    margin-left: 5px;
+    cursor: pointer;
+    font-size: 25px;
+}
+
+.main .header .second-nav {
+    color: #fff;
+    font-size: 20px;
+}
+
+.main .header .admin-profile p {
+    color: azure;
+    font-size: 13px;
+}
+
+.main .header .admin-profile p span {
+    display: block;
+    color: #8e8e8e;
+    font-size: 12px;
+}
+
+
+/* Main - Information */
+
+.main .information {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.main .information .col-div-3 {
+    /* width: 24%; */
+    /* width: calc(25% - 20px); */
+    flex: 0 0 calc(25% - 20px);
+    max-width: calc(25% - 20px);
+    background-color: #272c4a;
+}
+
+.main .information .box-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 50px;
+}
+
+.main .information .box-item .box-item-icon svg {
+    color: #818188;
+    font-size: 40px;
+    margin-left: 5px;
+}
+
+.main .information .box-item .box-item-text {
+    color: #fff;
+    font-size: 30px;
+    text-align: center;
+}
+
+.main .information .box-item .box-item-text h4 {
+    font-family: 'Poppins', sans-serif;
+}
+
+.main .information .box-item .box-item-text h6 {
+    color: #818181;
+    font-size: 15px;
+    font-weight: 300;
+}
+
+
+/* Main - Content */
+.main .content {
+    background-color: #272c4a;
+    margin-top: 30px;
+    padding: 20px;
+}
+
+.main .content .content-item h3 {
+    color: #f7403b;
+    margin-bottom: 30px;
+}
+
+.main .content .content-item table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.main .content .content-item table tr th,
+.main .content .content-item table tr td {
+    padding: 15px;
+    border-bottom: 1px solid rgba(130, 130, 130, 0.3);
+    color: azure;
+}
+
+
+/* Display */
+
+#mySlideNav.slide-nav.display {
+    width: 60px;
+}
+
+#adminMain.main.display {
+    margin-right: 60px;
+}
+
+.sidebar-link.display {
+    visibility: hidden;
+}
+
+.sidebar-icon.display {
+    visibility: visible;
+}
+
+.sidebar-icon.display svg {
+    font-size: larger;
+}
+
+.logo.display {
+    visibility: hidden;
+}
+
+
+/* Main - Pagination */
+
+.pagination .page-item.active .page-link {
+    background-color: #f7403b;
+    border-color: #f7403b;
+}
+
+.pagination .page-item:first-child .page-link {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    border-top-right-radius: 0.25rem;
+    border-bottom-right-radius: 0.25rem;
+}
+
+.pagination .page-item:last-child .page-link {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    border-top-left-radius: 0.25rem;
+    border-bottom-left-radius: 0.25rem;
+}
+
+.pagination .page-link {
+    color: #1b203d;
+    border: 1px solid #1b203d;
+}
+
+.pagination .page-link:hover {
+    background-color: gainsboro;
+}
+
+
+/* Main - Form*/
+
+.form-group {
+    width: 100%;
+    margin: 25px 0;
+}
+
+.form-group label {
+    display: block;
+    width: 100%;
+    color: #818188;
+}
+
+.form-group input {
+    width: 50%;
+    margin-top: 10px;
+    padding: 10px;
+    border: none;
+    outline: none;
+    font-size: 13px;
+}
+
+.form-group textarea {
+    width: 50%;
+    height: 150px;
+    margin-top: 10px;
+    padding: 10px;
+    border: none;
+    outline: none;
+    resize: none;
+    font-size: 13px;
+}
+
+.form-group select {
+    width: 50%;
+    margin-top: 10px;
+    padding: 10px;
+    border: none;
+    outline: none;
+    font-size: 13px;
+}
+
+.form-group .btn-form {
+    width: 150px;
+    padding: 10px;
+    background-color: #f7403b;
+    color: #fff;
+}
+
+.form-group p {
+    font-size: 13px;
+}
+
+
+/* Main - Content - (Index, Create, Edit) */
+
+.content-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.content-header a {
+    display: block;
+    width: 200px;
+    padding: 10px;
+    background-color: #f7403b;
+    color: #fff;
+    text-align: center;
+    text-decoration: none;
+}
+
+.content-header h3 {
+    margin-bottom: 0 !important;
+}

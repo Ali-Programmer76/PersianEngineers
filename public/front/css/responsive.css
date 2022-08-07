@@ -1,0 +1,115 @@
+@media screen and (max-width:992px) {
+
+    .navbar .hamburger-menu {
+        display: block;
+    }
+
+    .navbar .logo a {
+        display: block;
+    }
+
+    .navbar-nav-menu .navbar-nav {
+        position: fixed;
+        top: 0;
+        right: 0;
+        width: 250px;
+        height: 100vh;
+        background-color: #3c4149;
+        z-index: 1000;
+        flex-direction: column;
+        transform: translateX(150%);
+        transition: all 0.3s ease-in-out;
+    }
+
+    .navbar-nav-menu .navbar-nav.show {
+        transform: translateX(0);
+    }
+
+    .navbar .nav-link.active::before {
+        transform: skewX(0deg);
+    }
+
+    .navbar-nav-menu .navbar-nav .close-menu {
+        display: block;
+        padding: 20px 0;
+        background: #2d3036;
+        color: white;
+        font-size: 25px;
+        text-align: center;
+        cursor: pointer;
+    }
+
+    .navbar-nav-menu .navbar-nav .close-menu svg {
+        color: #ffa62b;
+    }
+
+    .header-overlay-menu {
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(60, 60, 70, 0.6);
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.3s ease-in-out;
+        z-index: 1;
+    }
+
+    .header-overlay-menu.display {
+        opacity: 1;
+        visibility: visible;
+    }
+}
+
+@media screen and (max-width:767px) {
+
+    .about .about-img {
+        height: 500px;
+    }
+
+    .introduction::before {
+        opacity: 0.5;
+        right: -100px;
+    }
+
+    .service .service-img {
+        height: 600px;
+    }
+}
+
+@media screen and (max-width:576px) {
+    .detail-website .blog-details .blog-details-item .blog-details-item-body .blog-item-comment .comment-write .comment-write-img {
+        width: 50px;
+        height: 50px;
+    }
+
+    .detail-website .blog-details .blog-details-item .blog-details-item-body .blog-item-comment .comment-reply .comment-reply-img {
+        width: 50px;
+        height: 50px;
+    }
+
+    .hero-wrap-content a {
+        display: block;
+        width: 100% !important;
+        margin-bottom: 10px;
+    }
+
+    .hero-wrap-content h2 {
+        font-size: 15px !important;
+        line-height: 20px !important;
+    }
+
+    .hero-wrap .hero-wrap-content::after {
+        width: 50%;
+        height: 100%;
+        content: "";
+        position: absolute;
+        top: -45%;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        border: 10px solid rgba(255, 255, 255, 0.1);
+        margin: 0 auto;
+    }
+}
